@@ -179,17 +179,59 @@ E-Mail:
 
 \section{Theorie}
 \label{sec:theorie}
+\subsection{Fresnelsche Formeln}
+\begin{align}
+	r_s&=-\frac{\sin(\alpha-\beta)}{\sin(\alpha+\beta)}\\
+	r_p&=\frac{\tan(\alpha-\beta)}{\tan(\alpha+\beta)}
+\end{align}
+
+\subsection{Brewster-Winkel}
+\begin{align}
+	\tan\alpha_\text{Brewster}=\frac{n_2}{n_1}
+\end{align}
 
 \section{Durchführung}
 \label{sec:durchfuehrung}
 
 \section{Auswertung}
 \label{sec:auswertung}
+\subsection{Drehung}
 \begin{figure}[!htb]
 	\centering
 	\input{drehung.tex}
 	\caption{Drehwinkel $\gamma$ gegen den Auftreffwinkel $\alpha$ aufgetragen.}
 \end{figure}
+
+\begin{align}
+	\sigma_n=\frac{\sigma_\alpha}{\cos^2\alpha}
+\end{align}
+
+Aus der linearen Regression: $\alpha=53.5^\circ \pm 0.1^\circ$.
+\begin{empheq}[box=\shadowbox]{align*}
+	n = 1.352 \pm 0.005\,.
+\end{empheq}
+
+Aus dem $\chi^2$-Fit der Theoriekurve erhält man
+\begin{empheq}[box=\shadowbox]{align*}
+	n = 1.405 \pm 0.019\,.
+\end{empheq}
+
+\subsection{Brewsterwinkel}
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline		
+		& $\Phi$ [$^\circ$] & $\alpha$ [$^\circ$] & $n$ \\
+		\hline
+		Alle Werte & $66.6 \pm 0.6$ & $56.7 \pm 0.3$ & $1.522 \pm 0.018$ \\
+		erste Messreihe & $66.4 \pm 0.9$ & $56.8 \pm 0.5$ & $1.53 \pm 0.03$ \\
+		zweite Messreihe & $67.0 \pm 0.5$ & $56.50 \pm 0.25$ & $1.511 \pm 0.015$ \\
+		\hline
+		Michael & $67.3 \pm 0.5$ & $56.35 \pm 0.25$ & $1.502 \pm 0.015$ \\
+		Felix & $65.9 \pm 1.0$ & $57.1 \pm 0.5$ & $1.55 \pm 0.03$ \\
+		\hline
+	\end{tabular}
+\end{table}
 
 \section{Diskussion}
 \label{sec:diskussion}

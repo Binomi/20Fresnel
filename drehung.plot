@@ -5,6 +5,8 @@ set xlabel 'Auftreffwinkel $\alpha$ [$^\circ$]'
 set ylabel 'Drehwinkel $\gamma$ [$^\circ$]'
 set key top right
 
+set xrange [40:95]
+
 rad(x)=x*pi/180
 deg(x)=x*180/pi
 
@@ -25,6 +27,9 @@ p 'messwerte.csv' u 2:5:(0.2) w e t'Messwerte',\
   f(x) t 'lineare Regression',\
   h(rad(x)) t 'Theoriekurve',\
   j(rad(x)) t 'Theorie gefittet'
+
+print m,b
+print (45-b)/m
 
 set output
 !epstopdf drehung.eps
