@@ -186,22 +186,48 @@ Bei der Messung spielt die \emph{Doppelbrechung} eine große Rolle.
 \section{Theorie}
 \label{sec:theorie}
 \subsection{Fresnelsche Formeln}
+Maxwellsche Gleichungen
+Stetigkeit an Grenzübergängen
+Reflexionskoeffizienten
 \begin{align}
-	r_s&=-\frac{\sin(\alpha-\beta)}{\sin(\alpha+\beta)}\\
+	r_s&=-\frac{\sin(\alpha-\beta)}{\sin(\alpha+\beta)}
+	\label{eq:r_s}\\
 	r_p&=\frac{\tan(\alpha-\beta)}{\tan(\alpha+\beta)}
+	\label{eq:r_p}
 \end{align}
+Dabei gilt das Snellius'sche Brechungsgesetz
+\begin{align}
+	n_1\sin\alpha=n_2\sin\beta\,.
+	\label{eq:snellius}
+\end{align}
+Intensität
+Energieerhaltung
+Transmission
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.7]{fresnelkoeff.png}
-	\caption{Fresnelkoeffizienten für $n=1.51$. \cite[Datum: 23.03.2015]{LP20}}
+	\input{fresnelkoeff.tex}
+	\caption{Fresnelkoeffizienten für $n_1=1$ und $n_2=1.51$.}
 	\label{fig:fresnelkoeff}
 \end{figure}
 
 \subsection{Brewster-Winkel}
+Nach \eqref{eq:r_p} verschwindet der Reflexionskoeffizient $r_p$, wenn $\alpha+\beta=90^\circ$, denn dann ist $\tan(\alpha+\beta)=\infty$.
+Setzt man nun die Beziehung \eqref{eq:snellius} ein, kann man diesen Einfallswinkel $\alpha_B$, den sogenannten \emph{Brewster-Winkel}, über
 \begin{align}
-	\tan\alpha_\text{Brewster}=\frac{n_2}{n_1}
+	\tan\alpha_\text{B}=\frac{n_2}{n_1}
 \end{align}
+berechnen, bei dem keine Reflexion von parallelem Licht auftritt.
+Dies ist auch in Abbildung \ref{fig:fresnelkoeff} gut zu erkennen.
+Diesen Effekt kann man plausibel machen, wenn man sich die Atome im zweiten Medium als Hertzsche Dipole vorstellt.
+Diese strahlen nämlich nicht in der Schwingungsrichtung der Dipolmomente.
+
+\subsection{Doppelbrechung}
+anisotrop
+optische Achse
+zwei Brechungsindizes
+ordentlicher und außerordentlicher Strahl
+Nicol-Prisma
 
 \section{Durchführung}
 \label{sec:durchfuehrung}
