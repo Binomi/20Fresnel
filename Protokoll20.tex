@@ -216,6 +216,7 @@ Nach \eqref{eq:r_p} verschwindet der Reflexionskoeffizient $r_p$, wenn $\alpha+\
 Setzt man nun die Beziehung \eqref{eq:snellius} ein, kann man diesen Einfallswinkel $\alpha_B$, den sogenannten \emph{Brewster-Winkel}, über
 \begin{align}
 	\tan\alpha_\text{B}=\frac{n_2}{n_1}
+	\label{eq:brewster}
 \end{align}
 berechnen, bei dem keine Reflexion von parallelem Licht auftritt.
 Dies ist auch in Abbildung \ref{fig:fresnelkoeff} gut zu erkennen.
@@ -272,41 +273,89 @@ Man bestimmt mehrmals den Auslenkwinkel des Schwenkarms, bei dem ein Intensität
 
 \section{Auswertung}
 \label{sec:auswertung}
-\subsection{Drehung der Schwingungsebene}
-\begin{figure}[!htb]
-	\centering
-	\input{drehung.tex}
-	\caption{Drehwinkel $\gamma$ gegen den Auftreffwinkel $\alpha$ aufgetragen.}
-\end{figure}
+Die gemessene Auslenkung des Schwenkarms $\Phi$ muss zunächst umgerechnet werden, um den Winkel $\alpha$ zum Lot der Prismaoberfläche zu erhalten (vgl. Abb.\ref{fig:aufbau}):\\
+\begin{align}
+	\alpha=90^\circ-\frac{1}{2}\Phi\,.
+\end{align}
+Außerdem ist $n_1=1$ (Luft) und der Brechungsindex für das Prismenglas sollte bei $n := n_2=1.51 \pm 0.01$ liegen.
+Er wird durch die beiden Messungen und verschiedene Methoden bestimmt.
 
-Aus dem $\chi^2$-Fit der Theoriekurve erhält man
+\subsection{Drehung der Schwingungsebene}
+Bevor der Strahl auf das Nicol-Prisma trifft, ist er zu gleichen Teilen parallel sowie senkrecht zur Einfallsebene polarisiert.
+Da aber beide Polarisationsrichtungen unterschiedlich stark reflektiert werden, ist der ausfallende Strahl um den Winkel $\gamma$ gedreht.
+Dieser lässt sich mit
+\begin{align}
+	\tan(\gamma+45^\circ)=\frac{r_s}{r_p}=-\frac{\cos(\alpha-\beta)}{\cos(\alpha+\beta)}
+	\label{eq:theorie}
+\end{align}
+berechnen.
+Einziger Parameter ist dabei das Verhältnis der Brechungsindizes $\frac{n_2}{n_1}$, da $\beta$ über \eqref{eq:snellius} von $\alpha$ abhängt.
+
+Die Drehung der Schwingungsebene konnte nur relativ gemessen werden.
+Bei einem Einfallswinkel von $90^\circ$ wird das Licht jedoch nicht gedreht, da in beiden Polarisationsfällen alles reflektiert wird.
+Also ist dort $\gamma=0^\circ$.
+In Abbildung \ref{fig:drehwinkel} ist der Drehwinkel $\gamma$ gegen den Einfallswinkel $\alpha$ aufgetragen.
+Der Messfehler für $\gamma$ beträgt $0.2^\circ$.
+Außerdem ist die Theoriekurve nach \eqref{eq:theorie} mit $n=1.51$ eingezeichnet.\\
+Zusätzlich kann man den Parameter $n$ noch an die Messwerte anpassen:
+Aus dem $\chi^2$-Fit der Theoriekurve  erhält man
 \begin{empheq}[box=\shadowbox]{align*}
 	n = 1.405 \pm 0.019\,.
 \end{empheq}
 
-\subsection{Brechungsindex aus $\gamma=45^\circ$}
 \begin{figure}[!htb]
 	\centering
-	\input{drehung_zoom.tex}
-	\caption{$\gamma$ gegen $\alpha$ im Bereich $\gamma=45^\circ$: lineare Regression und Brewster-Winkel}
+	\input{drehung.tex}
+	\caption{Drehwinkel $\gamma$ gegen den Auftreffwinkel $\alpha$ aufgetragen.}
+	\label{fig:drehwinkel}
 \end{figure}
 
-
+\subsection{Brechungsindex aus $\gamma=45^\circ$}
+Bei einem Drehwinkel $\gamma=45^\circ$ ist der Einfallswinkel gerade der Brewster-Winkel $\alpha_B$, da dann nach \eqref{eq:theorie} $\cos(\alpha+\beta)=0$ und somit $\alpha+\beta=90^\circ$ gelten muss.
+Man kann ihn somit graphisch bestimmen.
+Legt man eine Gerade durch die 6 nächsten Werte (vgl. Abb. \ref{fig:drehwinkel_zoom}), erhält man aus der Geradensteigung $m=-1.283 \pm 0.029$ und dem y-Achsenabschnitt 
+$b=114.1^\circ \pm 1.6^\circ$ mit
+\begin{align}
+	\alpha&=\frac{b-45^\circ}{m} \qquad \text{und}\\
+	\sigma_\alpha&=\sqrt{\left(\frac{\sigma_b}{m}\right)^2+\left(\frac{b-45^\circ}{m^2}\cdot\sigma_m \right)^2}
+\end{align}
+den passenden Winkel $\alpha_B=53.8^\circ \pm 1.8^\circ$.
+Daraus kann man mit \eqref{eq:brewster} den Brechungsindex des Prismas berechnen.
+Der sich dabei ergebende Fehler leitet sich aus der Fehlerfortpflanzung ab und wird somit mit
 \begin{align}
 	\sigma_n=\frac{\sigma_\alpha}{\cos^2\alpha}
+	\label{eq:brewster_err}	
 \end{align}
-
-Aus der linearen Regression: $\alpha=53.8^\circ \pm 1.8^\circ$.
+bestimmt.
+Man erhält
 \begin{empheq}[box=\shadowbox]{align*}
 	n = 1.37 \pm 0.10\,.
 \end{empheq}
 
+\begin{figure}[!htb]
+	\centering
+	\input{drehung_zoom.tex}
+	\caption{$\gamma$ gegen $\alpha$ im Bereich $\gamma=45^\circ$: lineare Regression und Brewster-Winkel}
+	\label{fig:drehung_zoom}
+\end{figure}
+
+
 \subsection{Brewster-Winkel}
+Zunächst wurden 6 Messwerte für den Brewster-Winkel $\alpha_B$ bzw. den zugehörigen Auslenkwinkel $\Phi_B$ des Schwenkarms aufgenommen.
+Dabei ließ sich das Minimum nur schwer finden und die Messwerte schwankten sehr.
+Dann wurde der Polaristor um etwa $5^\circ$ gedreht und der Bereich minimaler Intensität war viel schärfer als zuvor.
+Es wurden 4 Messwerte aufgenommen.
+Wie zuvor auch wechselten sich die Versuchspartner zwischen jedem Messwert ab.
+Man kann nun aus allen Werten ein $\Phi_B$ bestimmen oder einzeln für jede Messreihe oder jede Person.
+Der Fehler berechnet sich dabei aus der Student-t-Verteilung, da die Anzahl der Messwerte gering ist.
+Er halbiert sich für $\alpha_B$.
+Mit \eqref{eq:brewster} und \eqref{eq:brewster_err} kann wieder der Brechungsindex berechnet werden.
+Die somit berechneten Werte sind in Tabelle \ref{tab:brewster} aufgeführt.
 \begin{table}[!htb]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline		
-		& $\Phi$ [$^\circ$] & $\alpha$ [$^\circ$] & $n$ \\
+		& $\Phi_B$ [$^\circ$] & $\alpha_B$ [$^\circ$] & $n$ \\
 		\hline
 		Alle Werte & $66.6 \pm 0.6$ & $56.7 \pm 0.3$ & $1.522 \pm 0.018$ \\
 		erste Messreihe & $66.4 \pm 0.9$ & $56.8 \pm 0.5$ & $1.53 \pm 0.03$ \\
@@ -329,7 +378,6 @@ Aus der linearen Regression: $\alpha=53.8^\circ \pm 1.8^\circ$.
 	\caption{$\gamma$ gegen $\alpha$: $\gamma$ um $5^\circ$ nach oben verschoben für $\alpha \leq 67.5^\circ\,$.}
 \end{figure}
 
-\section{Anhang}
 
 \bibliography{literatur}
 \bibliographystyle{babalpha}
