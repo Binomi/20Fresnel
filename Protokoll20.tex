@@ -317,7 +317,7 @@ Legt man eine Gerade durch die 6 nächsten Werte (vgl. Abb. \ref{fig:drehung_zoo
 $b=114.1^\circ \pm 1.6^\circ$ mit
 \begin{align}
 	\alpha&=\frac{45^\circ-b}{m} \qquad \text{und}\\
-	\sigma_\alpha&=\sqrt{\left(\frac{\sigma_b}{m}\right)^2+\left(\frac{b-45^\circ}{m^2}\cdot\sigma_m \right)^2}
+	\sigma_\alpha&=\sqrt{\left(\frac{\sigma_b}{m}\right)^2+\left(\frac{45^\circ-b}{m^2}\cdot\sigma_m \right)^2}
 \end{align}
 den passenden Winkel $\alpha_B=53.8^\circ \pm 1.8^\circ$.
 Daraus kann man mit \eqref{eq:brewster} den Brechungsindex des Prismas berechnen.
@@ -419,6 +419,23 @@ Man erkennt aber trotzdem signifikante Unterschiede in der Genauigkeit der Messu
 So ist der Fehler $\sigma_n=0.03$ bei der ersten Messreihe und den von Felix aufgenommenen Werten etwa doppelt so groß wie die anderen drei Fehlern.
 Die Werte für den Brewster-Winkel streuen nämlich sehr, da das Minimum zuerst ziemlich breit war.
 Hätte man bei der zweiten Messung öfter gemessen, wäre der Fehler $\sigma_n$ noch deutlich geringer.
+
+\subsection{Falsche Polarisatorstellung}
+
+\begin{align}
+	\tan(\gamma+a)=\tan(a)\cdot\frac{r_s}{r_p}=-\tan(a)\cdot\frac{\cos(\alpha-\beta)}{\cos(\alpha+\beta)}
+\end{align}
+
+Fittet man den Parameter $a$ dieser Kurve an die Messwerte bei festem $n=1.51$ wie in Abbildung \ref{fig:drehung_disk} ergibt sich für die Polarisatorstellung $a=48.68^\circ \pm 0.19^\circ$.
+Dies sind also etwa $3.7^\circ$ mehr als die gewünschten $45^\circ$.
+
+\begin{figure}[!htb]
+	\centering
+	\input{drehung_disk.tex}
+	\caption{$\gamma$ gegen $\alpha$: verbesserte Theoriekurve.}
+	\label{fig:drehung_disk}
+\end{figure}
+
 
 \bibliography{literatur}
 \bibliographystyle{babalpha}
