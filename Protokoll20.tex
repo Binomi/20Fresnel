@@ -306,17 +306,17 @@ Aus dem $\chi^2$-Fit der Theoriekurve  erhält man
 \begin{figure}[!htb]
 	\centering
 	\input{drehung.tex}
-	\caption{Drehwinkel $\gamma$ gegen den Auftreffwinkel $\alpha$ aufgetragen.}
+	\caption{Drehwinkel $\gamma$ gegen den Einfallswinkel $\alpha$ aufgetragen.}
 	\label{fig:drehwinkel}
 \end{figure}
 
 \subsection{Brechungsindex aus $\gamma=45^\circ$}
 Bei einem Drehwinkel $\gamma=45^\circ$ ist der Einfallswinkel gerade der Brewster-Winkel $\alpha_B$, da dann nach \eqref{eq:theorie} $\cos(\alpha+\beta)=0$ und somit $\alpha+\beta=90^\circ$ gelten muss.
 Man kann ihn somit graphisch bestimmen.
-Legt man eine Gerade durch die 6 nächsten Werte (vgl. Abb. \ref{fig:drehwinkel_zoom}), erhält man aus der Geradensteigung $m=-1.283 \pm 0.029$ und dem y-Achsenabschnitt 
+Legt man eine Gerade durch die 6 nächsten Werte (vgl. Abb. \ref{fig:drehung_zoom}), erhält man aus der Geradensteigung $m=-1.283 \pm 0.029$ und dem y-Achsenabschnitt 
 $b=114.1^\circ \pm 1.6^\circ$ mit
 \begin{align}
-	\alpha&=\frac{b-45^\circ}{m} \qquad \text{und}\\
+	\alpha&=\frac{45^\circ-b}{m} \qquad \text{und}\\
 	\sigma_\alpha&=\sqrt{\left(\frac{\sigma_b}{m}\right)^2+\left(\frac{b-45^\circ}{m^2}\cdot\sigma_m \right)^2}
 \end{align}
 den passenden Winkel $\alpha_B=53.8^\circ \pm 1.8^\circ$.
@@ -372,15 +372,53 @@ Die somit berechneten Werte sind in Tabelle \ref{tab:brewster} aufgeführt.
 \section{Diskussion}
 \label{sec:diskussion}
 \subsection{Drehung der Schwingungsebene}
-
+Der Wert für den Brechungsindex $n=1.405 \pm 0.019$ aus dem Fit der Theoriekurve an die Messwerte ist $7\%$ kleiner als der Literaturwert $n=1.51$.
+Außerdem  liegt jener nicht im relativ kleinen Fehlerintervall.
+Vergleicht man nun in Abbildung \ref{fig:drehwinkel} die Messwerte mit der Theorie ($n=1.51$), stellt man fest, dass diese anfangs, also bei großen $\alpha$, sehr gut passen.
+Für kleinere Winkel weichen sie deutlich ab.
+Man erkennt einen leichten Sprung bei $\alpha=67.5^\circ$.
+Da von $\alpha=90^\circ$ angefangen wurde, zu messen, kann es sein, dass ab der Sprungstelle falsch abgelesen wurde.
+Dies verdeutlicht Abbildung \ref{fig:drehung2}.
+Dort wird der notierte Winkel um $5^\circ$ nach oben korrigiert, da in diesen Abständen größere Striche auf der Skala des Analysators zur besseren Orientierung vorhanden sind.
+So ist der Sprung nun in die andere Richtung ausgeprägt, aber die Werte passen besser zur Theorie.
+Allerdings flachen die Messwerte bei kleinem $\alpha$ stärker ab als die theoretische Kurve, sodass diese Erklärung nicht vollständig richtig erscheint.
+Um diesen Sachverhalt zu klären, hätte man die Werte nochmal bezüglich der absoluten Position des Analysators kontrollieren müssen.
 \begin{figure}[!htb]
 	\centering
 	\input{drehung2.tex}
 	\caption{$\gamma$ gegen $\alpha$: $\gamma$ um $5^\circ$ nach oben verschoben für $\alpha \leq 67.5^\circ\,$.}
+	\label{fig:drehung2}
 \end{figure}
 
-\subsection{Brewster-Winkel}
+Der Wert für den Brechungsindex aus der linearen Regression ist $10\%$ kleiner als der Literaturwert.
+Jedoch ist das Fehlerintervall sehr groß und der Maximalwert $n=1.47$ weicht nur $2.7\%$ vom angegebenen Wert ab.
+Der Fehlerbalken in Abbildung \ref{fig:drehung_zoom} ist nämlich sehr groß.
+Hätte man mehr Messwerte in der Nähe von $\gamma=45^\circ$ aufgenommen, wäre die Gerade genauer bestimmt und so der Fehlerbalken kleiner.
+Die Abweichung zur Theoriekurve wird dann aber größer.
 
+Sofern die Messwerte korrekt notiert wurden, deuten sie auf einen sehr viel geringeren Brechungsindex hin.
+Der Brechungsindex, der aus dem Brewsterwinkel bestimmt wurde, weicht jedoch nicht so stark vom Literaturwert ab.
+Daher muss von einem systematischen Fehler ausgegangen werden.
+Eventuell war der Polarisator nicht genau um $45^\circ$ gedreht.
+Dies hätte zur Folge, dass das Licht nicht zur Hälfte parallel polarisiert und zur anderen senkrecht polarisiert ist, wenn es auf das Prisma fällt.
+Somit wäre die Formel \eqref{eq:theorie} falsch.
+Eine mögliche Ursache für die Abweichung vom korrekten Polarisationswinkel könnte das Verwenden von zwei Prismen sein.
+So wurde das kleinere Nicol-Prisma zur Justage verwendet und das größere zur Messung.
+Dies erhöht die Fehlerquellen, da das Kleine nicht richtig ausgerichtet sein kann und beide aufgrund der Bauweise etwas unterschiedliche optische Eigenschaften haben.
+
+\subsection{Brewster-Winkel}
+Der Brechungsindex, der aus allen Messwerten zum Brewster-Winkel bestimmt wurde, ist minimal größer als der Literaturwert ($< 1\%$) und dieser liegt im Fehlerintervall.
+Die Abweichung ist für die zweite Messreihe noch kleiner und sowohl das berechnete Fehlerintervall sowie das angegebene weisen eine große Übereinstimmung auf.
+Dies unterstützt die obige Theorie der falschen Polarisatorstellung, da diese Messwerte nach nochmaligem Drehen um etwa $5^\circ$ aufgenommen wurden.
+So konnte man das nun dunklere Intensitätsminimum deutlicher erkennen.
+Dann ist das ankommende Licht nahezu parallel polarisiert.
+Hätte man nun die Messung des Drehwinkels wiederholt, müssten sich bessere Werte ergeben.\\
+
+Auch die anderen Werte in Tabelle \ref{tab:brewster} weisen kaum größere Abweichungen vom Literaturwert ab.
+Man erkennt aber trotzdem signifikante Unterschiede in der Genauigkeit der Messung.
+So ist der Fehler $\sigma_n=0.03$ bei der ersten Messreihe und den von Felix aufgenommenen Werten etwa doppelt so groß wie die anderen drei Fehlern.
+Die Werte für den Brewster-Winkel streuen nämlich sehr, da das Minimum zuerst ziemlich breit war.
+Hätte man bei der zweiten Messung öfter gemessen, wäre der Fehler $\sigma_n$ noch deutlich geringer.
 
 \bibliography{literatur}
 \bibliographystyle{babalpha}

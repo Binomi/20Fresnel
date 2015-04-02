@@ -1,5 +1,5 @@
 reset
-set terminal epslatex color
+set terminal epslatex color solid
 set output 'fresnelkoeff.tex'
 set xlabel 'Einfallswinkel $\alpha$ [$^\circ$]'
 set ylabel 'Reflexionskoeffizient $R$'
@@ -16,13 +16,9 @@ y(x)=asin(sin(x)/n)
 rs(x)=-sin(x-y(x))/sin(x+y(x))
 rp(x)=tan(x-y(x))/tan(x+y(x))
 
-p rs(rad(x))**2 t 'senkrecht',\
-  rp(rad(x))**2 t 'parallel'
+p rs(rad(x))**2 lw 3 t 'senkrecht',\
+  rp(rad(x))**2 lw 3 t 'parallel'
 
 set output
 !epstopdf fresnelkoeff.eps
 !rm fresnelkoeff.eps
-
-set terminal wxt
-replot
-pause -1

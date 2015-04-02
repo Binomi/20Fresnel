@@ -1,7 +1,7 @@
 reset
 set terminal epslatex color
 set output 'drehung.tex'
-set xlabel 'Auftreffwinkel $\alpha$ [$^\circ$]'
+set xlabel 'Einfallswinkel $\alpha$ [$^\circ$]'
 set ylabel 'Drehwinkel $\gamma$ [$^\circ$]'
 set key top right
 
@@ -35,7 +35,7 @@ set output
 reset
 set terminal epslatex color
 set output 'drehung_zoom.tex'
-set xlabel 'Auftreffwinkel $\alpha$ [$^\circ$]'
+set xlabel 'Einfallswinkel $\alpha$ [$^\circ$]'
 set ylabel 'Drehwinkel $\gamma$ [$^\circ$]'
 set key top right
 
@@ -89,7 +89,7 @@ set output
 reset
 set terminal epslatex color
 set output 'drehung2.tex'
-set xlabel 'Auftreffwinkel $\alpha$ [$^\circ$]'
+set xlabel 'Einfallswinkel $\alpha$ [$^\circ$]'
 set ylabel 'Drehwinkel $\gamma$ [$^\circ$]'
 set key top right
 
