@@ -1,0 +1,44 @@
+
+
+*******************************************************************************
+Fri Apr  3 13:24:25 2015
+
+
+FIT:    data read from 'messwerte.csv' u 2:5:(0.2)
+        format = x:z:s
+        #datapoints = 19
+function used for fitting: j(rad(x))
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 175.613           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 66.4534
+
+initial set of free parameter values
+
+b               = 48.6807
+n_1             = 1.51
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 64.5518
+rel. change during last iteration : -7.67741e-11
+
+degrees of freedom    (FIT_NDF)                        : 17
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.94863
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.79716
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+b               = 49.8064          +/- 0.2367       (0.4752%)
+n_1             = 1.5672           +/- 0.01124      (0.7173%)
+
+
+correlation matrix of the fit parameters:
+
+               b      n_1    
+b               1.000 
+n_1             0.885  1.000 
