@@ -1,5 +1,5 @@
 reset
-set terminal epslatex color
+set terminal epslatex mono
 set output 'drehung_disk.tex'
 set xlabel 'Einfallswinkel $\alpha$ [$^\circ$]'
 set ylabel 'Drehwinkel $\gamma$ [$^\circ$]'

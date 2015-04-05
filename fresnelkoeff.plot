@@ -1,5 +1,5 @@
 reset
-set terminal epslatex color solid
+set terminal epslatex mono
 set output 'fresnelkoeff.tex'
 set xlabel 'Einfallswinkel $\alpha$ [$^\circ$]'
 set ylabel 'Reflexionskoeffizient $R$'
