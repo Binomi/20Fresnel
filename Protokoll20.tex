@@ -180,29 +180,53 @@ In diesem Versuch steht die elektromagnetische Natur des Lichts im Vordergrund.
 So kann man Licht \emph{polarisieren}.
 Dieses Phänomen ist zum Beispiel wichtig für 3D-Filme.
 Außerdem soll der \emph{Brewster-Winkel} vermessen werden.
-Unter diesem Winkel ist der reflektierte Anteil minimal.\\
+Unter diesem Winkel ist der reflektierte Anteil minimal.
+Dies folgt aus den \emph{Fresnelschen Formeln}, die zum Beispiel angeben, wie groß der reflektierte Anteil ist.\\
 Bei der Messung spielt die \emph{Doppelbrechung} eine große Rolle.
 
 \section{Theorie}
 \label{sec:theorie}
+\subsection{Polarisation}
+Licht ist eine elektromagnetische Transversalwelle.
+Die Ausbreitungsrichtung, das elektrische E-Feld sowie das magnetische B-Feld stehen dabei jeweils senkrecht aufeinander.
+Polarisiert man diese Welle \emph{linear}, so schwingt das elektrische Feld immer in einer bestimmten Ebene.
+Diese ändert sich zeitlich nicht.
+Mehr dazu wird in \cite[S.233ff.]{saleh-teich} erläutert.
+
 \subsection{Fresnelsche Formeln}
-Maxwellsche Gleichungen
-Stetigkeit an Grenzübergängen
-Reflexionskoeffizienten
+\begin{figure}[!h]
+	\centering	
+	\includegraphics[scale=0.35]{Reflexion_Brechung.jpg}
+	\caption{Reflexion und Brechung an einer Grenzschicht nach \cite[Datum: 23.03.2015]{LP20}.}	
+	\label{fig:Reflexion_Brechung}
+\end{figure}
+
+Trifft Licht mit der Amplitude $E_e$ auf eine Grenzfläche wie in Abbildung \ref{fig:Reflexion_Brechung}, wird ein Teil $E_r$ davon reflektiert, der Andere, $E_g$, transmittiert.
+Dabei gelten nun zunächst die Winkelbeziehungen \glqq Einfallswinkel gleich Ausfallswinkel\grqq , also $\alpha=\alpha'$, sowie das Snelliussche Brechungsgesetz \cite[S.6]{saleh-teich}
 \begin{align}
-	r_s&=-\frac{\sin(\alpha-\beta)}{\sin(\alpha+\beta)}
-	\label{eq:r_s}\\
-	r_p&=\frac{\tan(\alpha-\beta)}{\tan(\alpha+\beta)}
-	\label{eq:r_p}
-\end{align}
-Dabei gilt das Snellius'sche Brechungsgesetz
-\begin{align}
-	n_1\sin\alpha=n_2\sin\beta\,.
+	n_1\sin\alpha=n_2\sin\beta\,,
 	\label{eq:snellius}
 \end{align}
-Intensität
-Energieerhaltung
-Transmission
+mit den Brechungsindizes $n_1$ des ersten Mediums und $n_2$ des zweiten.
+Das E-Feld lässt sich parallel und senkrecht zur Einfallsebene zerlegen, die durch den einfallenden Strahl und dem Lot gebildet wird.
+Die aus den Maxwellschen Gleichungen abgeleitete Stetigkeit der Tangentialkomponenten des E-Feldes bei einem Übergang sowie die Energieerhaltung führen zu den \emph{Fresnel Formeln}, die die Amplitudenverhältnisse bei solch einem Übergang beschreiben.
+So wird das Verhältnis $r:=\frac{E_r}{E_e}$ als Reflexionskoeffizient bezeichnet.
+Für den senkrechten sowie parallelen Fall folgt
+\begin{align}
+	r_s&=-\frac{\sin(\alpha-\beta)}{\sin(\alpha+\beta)}\qquad \text{und}
+	\label{eq:r_s}\\
+	r_p&=\frac{\tan(\alpha-\beta)}{\tan(\alpha+\beta)}\,.
+	\label{eq:r_p}
+\end{align}
+Dabei gilt das Snellius'sche Brechungsgesetz \eqref{eq:snellius}.
+Die genaue Herleitung kann in \cite[S.237ff.]{demtroeder2} nachgelsen werden.\\
+Das Quadrat des Reflexionskoeffizienten $R:=r^2$ gibt das Intensitätsverhältnis von reflektiertem zu einfallendem Strahl an, da die Intensität $I$ proportional zum Quadrat der Amplitude $E$ ist.
+In Abbildung \ref{fig:fresnelkoeff} ist $R$ in Abhängigkeit vom Einfallswinkel $\alpha$ für beide Fälle aufgetragen.
+Bei $\alpha=90^\circ$ wird unabhängig von der Polarisationsrichtung $100\%$ reflektiert.
+Über die Energieerhaltung kann der relative Transmissionsanteil $T$ der Intensität berechnet werden (vgl. \cite[S.239]{demtroeder2}):
+\begin{align}
+	T=1-R\,.
+\end{align}
 
 \begin{figure}[!h]
 	\centering
@@ -213,25 +237,39 @@ Transmission
 
 \subsection{Brewster-Winkel}
 Nach \eqref{eq:r_p} verschwindet der Reflexionskoeffizient $r_p$, wenn $\alpha+\beta=90^\circ$, denn dann ist $\tan(\alpha+\beta)=\infty$.
-Setzt man nun die Beziehung \eqref{eq:snellius} ein, kann man diesen Einfallswinkel $\alpha_B$, den sogenannten \emph{Brewster-Winkel}, über
+Setzt man nun die Beziehung \eqref{eq:snellius} ein, kann man diesen Einfallswinkel $\alpha_B$, den sogenannten \emph{Brewster-Winkel} (vgl. dazu \cite[S.240]{demtroeder2}), über
 \begin{align}
 	\tan\alpha_\text{B}=\frac{n_2}{n_1}
 	\label{eq:brewster}
 \end{align}
 berechnen, bei dem keine Reflexion von parallelem Licht auftritt.
-Dies ist auch in Abbildung \ref{fig:fresnelkoeff} gut zu erkennen.
-Diesen Effekt kann man plausibel machen, wenn man sich die Atome im zweiten Medium als Hertzsche Dipole vorstellt.
-Diese strahlen nämlich nicht in der Schwingungsrichtung der Dipolmomente.
+Dies ist auch in Abbildung \ref{fig:fresnelkoeff} gut zu erkennen ($\alpha_B=56.49^\circ$ bei $n=\frac{n_2}{n_1}=1.51$).
 
 \subsection{Doppelbrechung}
-anisotrop
-optische Achse
-zwei Brechungsindizes
-ordentlicher und außerordentlicher Strahl
-Nicol-Prisma
+Anisotrope Kristalle besitzen eine ausgezeichnete Achse, die sogenannte optische Achse.
+Der Brechungsindex in Richtung dieser Achse ist ein anderer als der senkrecht dazu.
+Dadurch teilt sich der Strahl in einen ordentlichen, der senkrecht zur optischen Achse polarisiert ist und nach dem Snelliusschen Brechungsgesetz gebrochen wird,  und einen außerordentlichen Strahl auf, der in Richtung der optischen Achse polarisiert ist.
+Letzterer wird zum Beispiel auch bei senkrechtem Einfall gebrochen, gehorcht Snellius also nicht.
+Näheres findet man in \cite[S.264ff.]{saleh-teich}.\\
+Ein Anwendungsbeispiel der Doppelbrechung ist das Nicol-Prisma (vgl. \cite[S.255]{demtroeder2}), welches in Abbildung \ref{fig:nicol} schematisch dargestellt ist.
+Während der ordentliche Strahl gebrochen wird und somit nach einer Totalreflexion auf eine absorbierende Schicht trifft, kann der außerordentliche Strahl das Prisma ungehindert passieren.
+So gelangt nur das in Richtung der optischen Achse polarisierte Licht hindurch.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{nicol.png}
+	\caption{Strahlengang im Nicolschen Prisma. \cite[Datum: 23.03.2015]{LP20}}
+	\label{fig:nicol}
+\end{figure}
 
 \section{Durchführung}
 \label{sec:durchfuehrung}
+In Abbildung \ref{fig:aufbau} ist der Aufbau schematisch dargestellt.
+Das Licht stammt von einer Quecksilberdampflampe, deren grüne Linie nach einer Linse und einer Blende durch einen Filter durchgelassen wird.
+Danach trifft der Strahl auf einen drehbaren Polarisator, ist also linear polarisiert, wenn er auf das Prisma trifft, welches sich auf einem Drehteller befindet.
+Lenkt man den Schwenkarm um einen Winkel $\Phi$ aus, so dreht der Teller sich um den halben Winkel, sodass man den reflektierten Strahl immer durch das Okular sehen kann, falls das Prisma richtig positioniert ist.
+Auf dem Schwenkarm kann noch der Analysator befestigt werden, also ein drehbares Nicol-Prisma.\\ 
+
 Zuerst muss der Strahlengang justiert werden.
 Dazu wird das evtl. noch im Strahlengang stehende Glasprisma entfernt und Polarisator und Analysator durchlässig gedreht.
 Mit den Linsen bildet man das grüne Lichtbündel scharf auf das Okular ab.
@@ -260,15 +298,9 @@ Man bestimmt mehrmals den Auslenkwinkel des Schwenkarms, bei dem ein Intensität
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.7]{aufbau_schema.png}
+	\includegraphics[scale=0.5]{aufbau_schema.png}
 	\caption{Versuchsaufbau schematisch. \cite[Datum: 23.03.2015]{LP20}}
 	\label{fig:aufbau}
-\end{figure}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.7]{nicol.png}
-	\caption{Strahlengang im Nicolschen Prisma. \cite[Datum: 23.03.2015]{LP20}}
-	\label{fig:nicol}
 \end{figure}
 
 \section{Auswertung}
@@ -281,6 +313,14 @@ Außerdem ist $n_1=1$ (Luft) und der Brechungsindex für das Prismenglas sollte 
 Er wird durch die beiden Messungen und verschiedene Methoden bestimmt.
 
 \subsection{Drehung der Schwingungsebene}
+
+\begin{figure}[!htb]
+	\centering
+	\input{drehung.tex}
+	\caption{Drehwinkel $\gamma$ gegen den Einfallswinkel $\alpha$ aufgetragen.}
+	\label{fig:drehwinkel}
+\end{figure}
+
 Bevor der Strahl auf das Nicol-Prisma trifft, ist er zu gleichen Teilen parallel sowie senkrecht zur Einfallsebene polarisiert.
 Da aber beide Polarisationsrichtungen unterschiedlich stark reflektiert werden, ist der ausfallende Strahl um den Winkel $\gamma$ gedreht.
 Dieser lässt sich mit
@@ -288,7 +328,7 @@ Dieser lässt sich mit
 	\tan(\gamma+45^\circ)=\frac{r_s}{r_p}=-\frac{\cos(\alpha-\beta)}{\cos(\alpha+\beta)}
 	\label{eq:theorie}
 \end{align}
-berechnen.
+unter Verwendung von \eqref{eq:r_s} und \eqref{eq:r_p} berechnen.
 Einziger Parameter ist dabei das Verhältnis der Brechungsindizes $\frac{n_2}{n_1}$, da $\beta$ über \eqref{eq:snellius} von $\alpha$ abhängt.
 
 Die Drehung der Schwingungsebene konnte nur relativ gemessen werden.
@@ -303,14 +343,15 @@ Aus dem $\chi^2$-Fit der Theoriekurve  erhält man
 	n = 1.405 \pm 0.019\,.
 \end{empheq}
 
+\subsection{Brechungsindex aus $\gamma=45^\circ$}
+
 \begin{figure}[!htb]
 	\centering
-	\input{drehung.tex}
-	\caption{Drehwinkel $\gamma$ gegen den Einfallswinkel $\alpha$ aufgetragen.}
-	\label{fig:drehwinkel}
+	\input{drehung_zoom.tex}
+	\caption{$\gamma$ gegen $\alpha$ im Bereich $\gamma=45^\circ$: lineare Regression und Brewster-Winkel}
+	\label{fig:drehung_zoom}
 \end{figure}
 
-\subsection{Brechungsindex aus $\gamma=45^\circ$}
 Bei einem Drehwinkel $\gamma=45^\circ$ ist der Einfallswinkel gerade der Brewster-Winkel $\alpha_B$, da dann nach \eqref{eq:theorie} $\cos(\alpha+\beta)=0$ und somit $\alpha+\beta=90^\circ$ gelten muss.
 Man kann ihn somit graphisch bestimmen.
 Legt man eine Gerade durch die 6 nächsten Werte (vgl. Abb. \ref{fig:drehung_zoom}), erhält man aus der Geradensteigung $m=-1.283 \pm 0.029$ und dem y-Achsenabschnitt 
@@ -331,13 +372,6 @@ Man erhält
 \begin{empheq}[box=\shadowbox]{align*}
 	n = 1.37 \pm 0.10\,.
 \end{empheq}
-
-\begin{figure}[!htb]
-	\centering
-	\input{drehung_zoom.tex}
-	\caption{$\gamma$ gegen $\alpha$ im Bereich $\gamma=45^\circ$: lineare Regression und Brewster-Winkel}
-	\label{fig:drehung_zoom}
-\end{figure}
 
 
 \subsection{Brewster-Winkel}
@@ -419,8 +453,8 @@ Die Messung des Brewster-Winkels deutet darauf hin, dass der Polarisator anfangs
 Dies hätte zur Folge, dass das Licht nicht zur Hälfte parallel polarisiert und zur anderen senkrecht polarisiert ist, wenn es auf das Prisma fällt.
 Somit wäre die Formel \eqref{eq:theorie} falsch.
 Eine mögliche Ursache für die Abweichung vom korrekten Polarisationswinkel könnte das Verwenden von zwei Prismen sein.
-So wurde das kleinere Nicol-Prisma zur Justage verwendet und das größere zur Messung.
-Dies erhöht die Fehlerquellen, da das Kleine nicht richtig ausgerichtet sein kann und beide aufgrund der Bauweise etwas unterschiedliche optische Eigenschaften haben.
+So wurde das kleinere Nicol-Prisma zur Justage verwendet und das andere im Analysator zur Messung.
+Dies erhöht die Fehlerquellen, da das Kleine nicht richtig ausgerichtet sein kann und beide aufgrund der Bauweise etwas unterschiedliche optische Eigenschaften haben könnten.
 
 Ist das Licht im Winkel $\delta$ zur optischen Achse polarisiert, muss Formel \eqref{eq:theorie} korrigiert werden.
 So ist das Verhältnis zwischen senkrecht und parallel polarisiertem Licht vor dem Prisma genau $\tan\delta$.
